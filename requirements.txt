@@ -3,5 +3,3 @@ tensorflow
 numpy
 pillow
 joblib
-sklearn
-xgboost
