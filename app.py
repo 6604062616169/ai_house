@@ -62,6 +62,12 @@ input_data.loc[0, 'FullBath'] = bathrooms   # จำนวนห้องน้�
 # ทำนายราคาบ้าน
 if st.button("📌 Predict Price"):
     try:
+        # ตรวจสอบและเพิ่มฟีเจอร์ที่โมเดลต้องการ
+        model_features = model.feature_names_in_
+        missing_features = set(model_features) - set(input_data.columns)
+        for feature in missing_features:
+            input_data[feature] = 0
+
         predicted_price = model.predict(input_data)[0]
         st.success(f"🏡 ราคาบ้านที่คาดการณ์: ${predicted_price:,.2f}")
     except Exception as e:
