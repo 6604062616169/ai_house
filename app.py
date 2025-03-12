@@ -11,14 +11,15 @@ except Exception as e:
 
 st.title("🏡 House Price Prediction")
 
-# Input fields
+# Input fields (You might need to add more inputs here based on the features used during training)
 sqft = st.number_input("🏠 ขนาดพื้นที่ (ตร.ฟุต)", min_value=500, max_value=10000, value=1500)
 bedrooms = st.number_input("🛏 จำนวนห้องนอน", min_value=1, max_value=10, value=3)
 bathrooms = st.number_input("🛁 จำนวนห้องน้ำ", min_value=1, max_value=10, value=2)
+# Add other necessary features here if known (e.g., location, year built)
 
 # Prediction button
 if st.button("📌 Predict Price"):
-    input_data = np.array([[sqft, bedrooms, bathrooms]])
+    input_data = np.array([[sqft, bedrooms, bathrooms]])  # Adjust this based on the required features
     try:
         predicted_price = model.predict(input_data)[0]
         st.success(f"🏡 ราคาบ้านที่คาดการณ์: ${predicted_price:,.2f}")
