@@ -51,7 +51,7 @@ X_train_columns = ['MSSubClass', 'LotFrontage', 'LotArea', 'OverallQual', 'Overa
                    'Exterior2nd_ImStucc', 'Exterior2nd_MetalSd', 'Exterior2nd_Other', 'Exterior2nd_Plywood', 
                    'Exterior2nd_Stone', 'Exterior2nd_Stucco', 'Exterior2nd_VinylSd', 'Exterior2nd_Wd Sdng', 'Exterior2nd_Wd Shng']
 
-# สร้าง DataFrame ว่าง
+# สร้าง DataFrame ว่าง ที่มีฟีเจอร์ทั้งหมดที่โมเดลต้องการ
 input_data = pd.DataFrame(np.zeros((1, len(X_train_columns))), columns=X_train_columns)
 
 # ใส่ค่าที่ต้องการพยากรณ์
