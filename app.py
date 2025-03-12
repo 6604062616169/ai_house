@@ -22,19 +22,15 @@ bathrooms = st.number_input("🛁 จำนวนห้องน้ำ", min_val
 # In practice, you'd load this data from a source or ensure it's available
 X_train_columns = ['GrLivArea', 'BedroomAbvGr', 'FullBath']  # Replace with actual columns from your model
 
-# Prepare the DataFrame for prediction
-input_data = pd.DataFrame(np.zeros((1, len(X_train_columns))), columns=X_train_columns)
+# สร้าง DataFrame ว่าง ที่มีโครงสร้างเหมือน X_train
+input_data = pd.DataFrame(np.zeros((1, X_train.shape[1])), columns=X_train.columns)
 
-# Set input values into the DataFrame
-input_data.loc[0, 'GrLivArea'] = sqft  # ขนาดพื้นที่
-input_data.loc[0, 'BedroomAbvGr'] = bedrooms  # ห้องนอน
-input_data.loc[0, 'FullBath'] = bathrooms  # ห้องน้ำ
+# ใส่ค่าที่ต้องการพยากรณ์
+input_data.loc[0, 'GrLivArea'] = 1000   # พื้นที่ใช้สอย (ตร.ฟุต)
+input_data.loc[0, 'BedroomAbvGr'] = 1   # จำนวนห้องนอน
+input_data.loc[0, 'FullBath'] = 1       # จำนวนห้องน้ำ
 
-# Prediction button
-if st.button("📌 Predict Price"):
-    try:
-        # Predict the house price
-        predicted_price = model.predict(input_data)[0]
-        st.success(f"🏡 ราคาบ้านที่คาดการณ์: ${predicted_price:,.2f}")
-    except Exception as e:
-        st.error(f"Prediction failed: {e}")
+# ทำนายราคาบ้าน
+predicted_price = model.predict(input_data)[0]
+
+print(f"🏡 ราคาบ้านที่คาดการณ์: ${predicted_price:,.2f}")
