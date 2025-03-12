@@ -17,20 +17,40 @@ sqft = st.number_input("🏠 ขนาดพื้นที่ (ตร.ฟุต
 bedrooms = st.number_input("🛏 จำนวนห้องนอน", min_value=1, max_value=10, value=3)
 bathrooms = st.number_input("🛁 จำนวนห้องน้ำ", min_value=1, max_value=10, value=2)
 
-# Placeholder for X_train (replace this with the actual training data or column names)
-# Here we assume X_train is a dataframe with column names as required by your model.
-# In practice, you'd load this data from a source or ensure it's available
-X_train_columns = ['GrLivArea', 'BedroomAbvGr', 'FullBath']  # Replace with actual columns from your model
+# Add missing features (as placeholders or with user inputs)
+first_flr_sf = st.number_input("พื้นที่ชั้น 1 (ตร.ฟุต)", min_value=0, value=800)
+second_flr_sf = st.number_input("พื้นที่ชั้น 2 (ตร.ฟุต)", min_value=0, value=700)
+porch_sf = st.number_input("พื้นที่ระเบียง (ตร.ฟุต)", min_value=0, value=100)
 
-# สร้าง DataFrame ว่าง ที่มีโครงสร้างเหมือน X_train
-input_data = pd.DataFrame(np.zeros((1, X_train.shape[1])), columns=X_train.columns)
+# Handling categorical features (e.g., Alley)
+alley_grvl = st.selectbox("ชนิดของทางเดิน (Gravel)", ['Yes', 'No'])
+alley_pave = st.selectbox("ชนิดของทางเดิน (Paved)", ['Yes', 'No'])
 
-# ใส่ค่าที่ต้องการพยากรณ์
-input_data.loc[0, 'GrLivArea'] = 1000   # พื้นที่ใช้สอย (ตร.ฟุต)
-input_data.loc[0, 'BedroomAbvGr'] = 1   # จำนวนห้องนอน
-input_data.loc[0, 'FullBath'] = 1       # จำนวนห้องน้ำ
+# Map categorical values to 1 or 0 (assuming one-hot encoding was applied during training)
+alley_grvl = 1 if alley_grvl == 'Yes' else 0
+alley_pave = 1 if alley_pave == 'Yes' else 0
 
-# ทำนายราคาบ้าน
-predicted_price = model.predict(input_data)[0]
+# Placeholder for X_train (replace this with actual column names from your model)
+X_train_columns = ['GrLivArea', 'BedroomAbvGr', 'FullBath', '1stFlrSF', '2ndFlrSF', '3SsnPorch', 'Alley_Grvl', 'Alley_Pave']
 
-print(f"🏡 ราคาบ้านที่คาดการณ์: ${predicted_price:,.2f}")
+# Prepare the DataFrame for prediction
+input_data = pd.DataFrame(np.zeros((1, len(X_train_columns))), columns=X_train_columns)
+
+# Set input values into the DataFrame
+input_data.loc[0, 'GrLivArea'] = sqft
+input_data.loc[0, 'BedroomAbvGr'] = bedrooms
+input_data.loc[0, 'FullBath'] = bathrooms
+input_data.loc[0, '1stFlrSF'] = first_flr_sf
+input_data.loc[0, '2ndFlrSF'] = second_flr_sf
+input_data.loc[0, '3SsnPorch'] = porch_sf
+input_data.loc[0, 'Alley_Grvl'] = alley_grvl
+input_data.loc[0, 'Alley_Pave'] = alley_pave
+
+# Prediction button
+if st.button("📌 Predict Price"):
+    try:
+        # Predict the house price
+        predicted_price = model.predict(input_data)[0]
+        st.success(f"🏡 ราคาบ้านที่คาดการณ์: ${predicted_price:,.2f}")
+    except Exception as e:
+        st.error(f"Prediction failed: {e}")
