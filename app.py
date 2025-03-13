@@ -120,10 +120,10 @@ if st.session_state.page == "Machine Learning":
     ) 
     st.write(
           """
-          ** การแบ่งข้อมูล Train และ Validation** \n
+          **การแบ่งข้อมูล Train และ Validation** \n
           รูป 6 \n
           แบ่งข้อมูลเป็น 80% สำหรับ Train และ 20% สำหรับ Validation  
-        ใช้ `train_test_split()` เพื่อช่วยให้โมเดลเรียนรู้และทดสอบได้แม่นยำขึ้น  
+          ใช้ `train_test_split()` เพื่อช่วยให้โมเดลเรียนรู้และทดสอบได้แม่นยำขึ้น  
             """
     )
 
