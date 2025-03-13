@@ -61,7 +61,7 @@ if st.session_state.page == "Machine Learning":
         """
         **อัปโหลด Dataset**  
         ```
-        from google.colab import files
+        from google.colab import files 
         uploaded = files.upload()  
         ```
         - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง
@@ -71,6 +71,17 @@ if st.session_state.page == "Machine Learning":
         ```  
         - ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
         """
+
+        " **แตกไฟล์ ZIP**\n"
+        "```python\n"
+        "!unzip house.zip \n"
+        "```\n"
+        "ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
+
+
+
+
+
 
         " **โหลดข้อมูล**\n"
         "```python\n"
