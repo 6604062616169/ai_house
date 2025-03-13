@@ -67,13 +67,13 @@ if st.session_state.page == "Machine Learning":
     )
 
     st.write(
-        " **โหลดข้อมูลและการตรวจสอบโครงสร้างของ Dataset**\n"
-         "\n รูปปปปปปป 2 \n"
         """
+        **โหลดข้อมูลและการตรวจสอบโครงสร้างของ Dataset**\n
+          รูปปปปปปป 2 \n
         หลังจากแตกไฟล์ ZIP แล้ว เราจะใช้ `pd.read_csv()` เพื่อโหลดข้อมูลเข้าสู่ Pandas DataFrame  
         - `train.csv` → ใช้ในการฝึกโมเดล (มีราคาบ้าน)
         - `test.csv` → ใช้ในการพยากรณ์ราคาบ้าน (ไม่มีราคาบ้าน)
-        - `sample_submission.csv` → ตัวอย่างไฟล์ที่ใช้ส่งผลลัพธ์ให้ Kaggle 
+        - `sample_submission.csv` → ตัวอย่างไฟล์ที่ใช้ส่งผลลัพธ์ให้ Kaggle \n
        
         หลังจากโหลดข้อมูลแล้ว เราจะตรวจสอบโครงสร้างของ dataset ด้วย `shape` และ `head()`  
         - `train_data.shape` → ดูขนาดของข้อมูล Train  
