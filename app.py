@@ -70,7 +70,6 @@ if st.session_state.page == "Machine Learning":
         "test_data = pd.read_csv('test.csv')\n"
         "```\n"
         "- โหลดไฟล์ `train.csv` และ `test.csv` เพื่อใช้งาน\n"
-        st.image("https://img5.pic.in.th/file/secure-sv1/1c2f764fab9cfb22a.png", width=600, use_container_width=False)
         
     )
 
