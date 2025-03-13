@@ -59,8 +59,8 @@ if st.session_state.page == "Machine Learning":
     st.subheader("ขั้นตอนการเตรียมข้อมูลใน Google Colab")
     st.write(
         """
-        " **อัปโหลด Datasetและแตกไฟล์ ZIP**\n"
-        "\n รูปปปปปปป 1 \n"
+        **อัปโหลด Datasetและแตกไฟล์ ZIP**\n
+         \n รูปปปปปปป 1 \n
         
         - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง
         - ใช้ `!unzip house.zip` เพื่อแตกไฟล์ 
