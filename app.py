@@ -96,40 +96,36 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         **การแปลงข้อมูล Categorical เป็นตัวเลข (One-Hot Encoding)**\n
-        รูป 4
+        รูป 4\n
         เนื่องจาก dataset มีบางคอลัมน์ที่เป็นข้อความ เช่น `Neighborhood` และ `HouseStyle`  
         เราจึงต้องแปลงข้อมูลเหล่านี้เป็นตัวเลขโดยใช้ **One-Hot Encoding**  
-        
-        **วิธีการทำงานของ One-Hot Encoding:**  
-        - แปลงข้อมูลข้อความเป็นคอลัมน์ใหม่ที่มีค่าเป็น 0 หรือ 1  
-        - ตัวอย่างเดิม:  
-          ```
-          HouseStyle
-          ------------
-          Bungalow
-          Colonial
-          Modern
-          ```
-        - หลังจากแปลง:
-          ```
-          HouseStyle_Bungalow  HouseStyle_Colonial  HouseStyle_Modern
-          -------------------  -------------------  ------------------
-          1                   0                    0
-          0                   1                    0
-          0                   0                    1
-          ```
         """
     )
-    st.subheader("One-Hot Encoding และการทำให้ Train/Test มีคอลัมน์ตรงกัน")
+
     st.write(
         """
-        - ใช้ One-Hot Encoding แปลงข้อมูลที่เป็นข้อความเป็นตัวเลข  
-        - ปรับให้ `train_data` และ `test_data` มีคอลัมน์ตรงกัน  
-        ```python
-        train_data, test_data = train_data.align(test_data, join='left', axis=1, fill_value=0)
-        ```
+        **การทำให้ Train / Test มีคอลัมน์ตรงกันและการแยก Features (X) กับ Target (y)**\n
+        รูป 5 \n
+        หลังจากใช้ **One-Hot Encoding** คอลัมน์ของ `train_data` และ `test_data` อาจไม่เหมือนกัน  
+        เช่น บางประเภทของ `HouseStyle` อาจมีเฉพาะในชุด Train หรือ Test   
+        ก่อน Train โมเดล เราต้องแยกข้อมูลเป็น:  
+        - **X** → Features ที่ใช้พยากรณ์ เช่น `GrLivArea`, `BedroomAbvGr`, `FullBath`  
+        - **y** → Target ที่ต้องทำนาย (`SalePrice`)  
+
+        **วิธีแยกข้อมูล:**  
+        - ลบ `Id` เพราะไม่เกี่ยวกับการพยากรณ์  
+        - ลบ `SalePrice` ออกจาก `X`  
+        - `X_test` มีเฉพาะ Features เพราะไม่มี Target
         """
     )
+
+
+
+
+
+
+
+    
 
     st.subheader("การ Train โมเดล RandomForest")
     st.write(
