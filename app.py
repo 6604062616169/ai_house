@@ -58,23 +58,35 @@ if st.session_state.page == "Machine Learning":
     )
     st.subheader("ขั้นตอนการเตรียมข้อมูลใน Google Colab")
     st.write(
-        
         " **อัปโหลด Datasetและแตกไฟล์ ZIP**\n"
         "\n รูปปปปปปป 1 \n"
-        "- ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง \n"
-        "- ใช้ `!unzip house.zip` เพื่อแตกไฟล์\n"
+        """
+        - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง
+        - ใช้ `!unzip house.zip` เพื่อแตกไฟล์ 
+        """
     )
 
     st.write(
+        " **โหลดข้อมูลและการตรวจสอบโครงสร้างของ Dataset**\n"
          "\n รูปปปปปปป 2 \n"
         """
         หลังจากแตกไฟล์ ZIP แล้ว เราจะใช้ `pd.read_csv()` เพื่อโหลดข้อมูลเข้าสู่ Pandas DataFrame  
         โดยมีไฟล์หลักที่ใช้คือ:
         - `train.csv` → ใช้ในการฝึกโมเดล (มีราคาบ้าน)
         - `test.csv` → ใช้ในการพยากรณ์ราคาบ้าน (ไม่มีราคาบ้าน)
-        - `sample_submission.csv` → ตัวอย่างไฟล์ที่ใช้ส่งผลลัพธ์ให้ Kaggle  
+        - `sample_submission.csv` → ตัวอย่างไฟล์ที่ใช้ส่งผลลัพธ์ให้ Kaggle 
+        หลังจากโหลดข้อมูลแล้ว เราจะตรวจสอบโครงสร้างของ dataset ด้วย `shape` และ `head()`  
+        - `train_data.shape` → ดูขนาดของข้อมูล Train  
+        - `test_data.shape` → ดูขนาดของข้อมูล Test  
+        - `train_data.head()` → ดูตัวอย่างข้อมูล 5 แถวแรก  
         """
     )
+
+
+
+
+
+    
     st.subheader("การจัดการข้อมูลที่ขาดหาย (Missing Data)")
     st.write(
         """
