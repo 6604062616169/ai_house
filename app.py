@@ -34,9 +34,119 @@ with col4:
 st.markdown("---")  # เส้นคั่นหน้า
 
 # 🟢 หน้า Machine Learning
+# 🟢 หน้า Machine Learning
 if st.session_state.page == "Machine Learning":
-    st.title("🤖 Machine Learning")
-    st.write("เนื้อหาเกี่ยวกับ Machine Learning...")
+    st.title("🤖 Machine Learning: House Price Prediction")
+
+    st.header("📌 ข้อมูล Dataset ที่ใช้")
+    st.write(
+        """
+        **Kaggle House Prices Dataset**  
+        - เป็นข้อมูลเกี่ยวกับราคาบ้านจากเมือง Ames, Iowa, USA  
+        - ใช้สำหรับสร้างโมเดลพยากรณ์ราคาบ้าน  
+        - แหล่งที่มา: [Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)  
+        """
+    )
+
+    st.subheader("📌 ขั้นตอนการเตรียมข้อมูลใน Google Colab")
+    st.write(
+        """
+        1️⃣ **อัปโหลด Dataset และแตกไฟล์ ZIP**  
+        ```python
+        from google.colab import files
+        uploaded = files.upload()
+        !unzip house.zip  
+        ```
+        - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง  
+        - ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
+        """
+
+        "2️⃣ **โหลดข้อมูล**\n"
+        "```python\n"
+        "train_data = pd.read_csv('train.csv')\n"
+        "test_data = pd.read_csv('test.csv')\n"
+        "```\n"
+        "- โหลดไฟล์ `train.csv` และ `test.csv` เพื่อใช้งาน\n"
+    )
+
+    st.subheader("📌 การจัดการข้อมูลที่ขาดหาย (Missing Data)")
+    st.write(
+        """
+        - ใช้ `.isnull().sum()` เพื่อตรวจสอบข้อมูลที่ขาดหาย  
+        - แก้ไขข้อมูลที่ขาดหายด้วย:
+        ```python
+        for col in train_data.columns:
+            if train_data[col].isnull().sum() > 0:
+                if train_data[col].dtype == 'object':
+                    train_data[col].fillna("None", inplace=True)
+                else:
+                    train_data[col].fillna(train_data[col].median(), inplace=True)
+        ```
+        - เติมค่า `None` ให้กับข้อมูลที่เป็นข้อความ  
+        - เติมค่ามัธยฐาน (Median) ให้กับข้อมูลตัวเลข  
+        """
+    )
+
+    st.subheader("📌 One-Hot Encoding และการทำให้ Train/Test มีคอลัมน์ตรงกัน")
+    st.write(
+        """
+        - ใช้ One-Hot Encoding แปลงข้อมูลที่เป็นข้อความเป็นตัวเลข  
+        - ปรับให้ `train_data` และ `test_data` มีคอลัมน์ตรงกัน  
+        ```python
+        train_data, test_data = train_data.align(test_data, join='left', axis=1, fill_value=0)
+        ```
+        """
+    )
+
+    st.subheader("📌 การ Train โมเดล RandomForest")
+    st.write(
+        """
+        - ใช้ `RandomForestRegressor` ในการ Train โมเดล  
+        ```python
+        model = RandomForestRegressor(n_estimators=100, random_state=42)
+        model.fit(X_train, y_train)
+        ```
+        - ทดสอบโมเดลด้วย Mean Absolute Error (MAE)
+        ```python
+        y_pred = model.predict(X_valid)
+        mae = mean_absolute_error(y_valid, y_pred)
+        print(f'Mean Absolute Error: {mae}')
+        ```
+        """
+    )
+
+    st.subheader("📌 การบันทึกโมเดลและโหลดโมเดล")
+    st.write(
+        """
+        - ใช้ `joblib` เพื่อบันทึกโมเดล
+        ```python
+        joblib.dump(model, 'house_price_model.pkl')
+        ```
+        - โหลดโมเดลขึ้นมาใช้งานใหม่
+        ```python
+        model = joblib.load('house_price_model.pkl')
+        ```
+        """
+    )
+
+    st.subheader("📌 ทำนายราคาบ้านตัวอย่าง")
+    st.write(
+        """
+        - ทดสอบพยากรณ์ราคาบ้านโดยใช้ข้อมูลจำลอง  
+        ```python
+        sample_data = pd.DataFrame(np.zeros((1, X_train.shape[1])), columns=X_train.columns)
+        sample_data.loc[0, 'GrLivArea'] = 1000
+        sample_data.loc[0, 'BedroomAbvGr'] = 2
+        sample_data.loc[0, 'FullBath'] = 1
+
+        predicted_price = model.predict(sample_data)[0]
+        print(f"🏡 ราคาบ้านที่คาดการณ์: ${predicted_price:,.2f}")
+        ```
+        """
+    )
+
+    st.success("✅ กระบวนการสร้างโมเดลเสร็จสมบูรณ์!")
+
 # 🟡 หน้า Demo Machine Learning
 elif st.session_state.page == "Demo Machine Learning":
     try:
