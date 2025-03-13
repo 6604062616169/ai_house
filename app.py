@@ -34,11 +34,10 @@ with col4:
 st.markdown("---")  # เส้นคั่นหน้า
 
 # 🟢 หน้า Machine Learning
-# 🟢 หน้า Machine Learning
 if st.session_state.page == "Machine Learning":
     st.title("🤖 Machine Learning: House Price Prediction")
 
-    st.header("📌 ข้อมูล Dataset ที่ใช้")
+    st.subheader("📌 ข้อมูล Dataset ที่ใช้")
     st.write(
         """
         **Kaggle House Prices Dataset**  
