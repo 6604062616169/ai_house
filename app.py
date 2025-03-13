@@ -119,6 +119,7 @@ if st.session_state.page == "Machine Learning":
           0                   0                    1
           ```
         """
+    )
     st.subheader("One-Hot Encoding และการทำให้ Train/Test มีคอลัมน์ตรงกัน")
     st.write(
         """
