@@ -66,7 +66,7 @@ if st.session_state.page == "Machine Learning":
         "```\n"
         "- ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง \n"
         
-        " **แตกไฟล์ ZIP**\n"
+        " \n**แตกไฟล์ ZIP**\n"
         "```python\n"
         "!unzip house.zip \n"
         "```\n"
