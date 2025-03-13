@@ -65,13 +65,13 @@ if st.session_state.page == "Machine Learning":
         "uploaded = files.upload() \n"
         "```\n"
         "- ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง \n"
-       
+       " **อัปโหลด Dataset**\n"
         " **แตกไฟล์ ZIP**\n"
         "```python\n"
         "!unzip house.zip \n"
         "```\n"
         "- ใช้ `!unzip house.zip` เพื่อแตกไฟล์\n"
-        
+        " **อัปโหลด Dataset**\n"
         " **โหลดข้อมูล**\n"
         "```python\n"
         "train_data = pd.read_csv('train.csv')\n"
