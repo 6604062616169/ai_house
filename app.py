@@ -61,6 +61,16 @@ if st.session_state.page == "Machine Learning":
         """
         **อัปโหลด Datasetและแตกไฟล์ ZIP**\n
          \n รูปปปปปปป 1 \n
+
+
+
+
+        
+        ฟีเจอร์หลักที่ใช้ในการพยากรณ์ราคาบ้าน :
+        - **LotArea** (ขนาดที่ดิน, ตารางฟุต)  
+        - **BedroomAbvGr** (จำนวนห้องนอน)  
+        - **FullBath** (จำนวนห้องน้ำ)  
+        - **SalePrice** (ราคาขายบ้าน)  
         
         - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง
         - ใช้ `!unzip house.zip` เพื่อแตกไฟล์ 
