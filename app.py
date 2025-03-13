@@ -63,7 +63,9 @@ if st.session_state.page == "Machine Learning":
         "รูปปปปปปป 1 \n"
         "- ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง \n"
         "- ใช้ `!unzip house.zip` เพื่อแตกไฟล์\n"
-        
+    )
+
+    st.write(
         """
         หลังจากแตกไฟล์ ZIP แล้ว เราจะใช้ `pd.read_csv()` เพื่อโหลดข้อมูลเข้าสู่ Pandas DataFrame  
         โดยมีไฟล์หลักที่ใช้คือ:
@@ -72,9 +74,6 @@ if st.session_state.page == "Machine Learning":
         - `sample_submission.csv` → ตัวอย่างไฟล์ที่ใช้ส่งผลลัพธ์ให้ Kaggle  
         """
     )
-        
-    )
-
     st.subheader("การจัดการข้อมูลที่ขาดหาย (Missing Data)")
     st.write(
         """
