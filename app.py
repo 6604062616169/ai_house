@@ -52,23 +52,20 @@ if st.session_state.page == "Machine Learning":
         ฟีเจอร์หลักที่ใช้ในการพยากรณ์ราคาบ้าน :
         
         - **LotArea** (ขนาดที่ดิน, ตารางฟุต)  
-          ➜ ที่ดินขนาดใหญ่ มักจะมีมูลค่าสูงขึ้น 
         
         - **BedroomAbvGr** (จำนวนห้องนอน)  
-          ➜ จำนวนห้องนอนที่มากขึ้นอาจมีผลต่อราคาบ้าน แต่ไม่เสมอไป เพราะต้องขึ้นกับปัจจัยอื่น ๆ  
 
         - **FullBath** (จำนวนห้องน้ำ)  
-          ➜ บ้านที่มีห้องน้ำมากขึ้น มักจะขายได้ราคาสูงขึ้น  
 
-        - **SalePrice** (ราคาขายบ้าน) **[Target ที่ต้องพยากรณ์]**  
+        - **SalePrice** (ราคาขายบ้าน)  
         """
     )
 
     st.subheader("ขั้นตอนการเตรียมข้อมูลใน Google Colab")
     st.write(
         """
-        1️⃣ **อัปโหลด Dataset และแตกไฟล์ ZIP**  
-        ```python
+        1️ **อัปโหลด Dataset และแตกไฟล์ ZIP**  
+        ```
         from google.colab import files
         uploaded = files.upload()
         !unzip house.zip  
@@ -77,7 +74,7 @@ if st.session_state.page == "Machine Learning":
         - ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
         """
 
-        "2️⃣ **โหลดข้อมูล**\n"
+        "2️ **โหลดข้อมูล**\n"
         "```python\n"
         "train_data = pd.read_csv('train.csv')\n"
         "test_data = pd.read_csv('test.csv')\n"
