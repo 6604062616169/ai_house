@@ -60,13 +60,14 @@ if st.session_state.page == "Machine Learning":
     st.write(
         
         " **อัปโหลด Datasetและแตกไฟล์ ZIP**\n"
-        "รูปปปปปปป 1 \n"
+        "\n รูปปปปปปป 1 \n"
         "- ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง \n"
         "- ใช้ `!unzip house.zip` เพื่อแตกไฟล์\n"
     )
 
     st.write(
         """
+        "\n รูปปปปปปป 2 \n"
         หลังจากแตกไฟล์ ZIP แล้ว เราจะใช้ `pd.read_csv()` เพื่อโหลดข้อมูลเข้าสู่ Pandas DataFrame  
         โดยมีไฟล์หลักที่ใช้คือ:
         - `train.csv` → ใช้ในการฝึกโมเดล (มีราคาบ้าน)
