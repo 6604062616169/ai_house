@@ -75,6 +75,7 @@ if st.session_state.page == "Machine Learning":
         - `train.csv` → ใช้ในการฝึกโมเดล (มีราคาบ้าน)
         - `test.csv` → ใช้ในการพยากรณ์ราคาบ้าน (ไม่มีราคาบ้าน)
         - `sample_submission.csv` → ตัวอย่างไฟล์ที่ใช้ส่งผลลัพธ์ให้ Kaggle 
+       
         หลังจากโหลดข้อมูลแล้ว เราจะตรวจสอบโครงสร้างของ dataset ด้วย `shape` และ `head()`  
         - `train_data.shape` → ดูขนาดของข้อมูล Train  
         - `test_data.shape` → ดูขนาดของข้อมูล Test  
