@@ -117,8 +117,7 @@ if st.session_state.page == "Machine Learning":
         - ลบ `SalePrice` ออกจาก `X`  
         - `X_test` มีเฉพาะ Features เพราะไม่มี Target
         """
-    )
-    st.header("📌 การแบ่งข้อมูล Train และ Validation")  
+    ) 
     st.write(
           """
           ** การแบ่งข้อมูล Train และ Validation** \n
