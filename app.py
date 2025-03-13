@@ -58,23 +58,21 @@ if st.session_state.page == "Machine Learning":
     )
     st.subheader("ขั้นตอนการเตรียมข้อมูลใน Google Colab")
     st.write(
-        """
+        
         " **อัปโหลด Dataset**\n"
         "```python\n"
         "from google.colab import files \n"
         "uploaded = files.upload() \n"
         "```\n"
         "- ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง \n"
-        """
-        """
-        " **แตกไฟล์ ZIP**\n"
+        
+        " **\nแตกไฟล์ ZIP**\n"
         "```python\n"
         "!unzip house.zip \n"
         "```\n"
         "- ใช้ `!unzip house.zip` เพื่อแตกไฟล์\n"
-        """
         
-        " **โหลดข้อมูล**\n"
+        " **\nโหลดข้อมูล**\n"
         "```python\n"
         "train_data = pd.read_csv('train.csv')\n"
         "test_data = pd.read_csv('test.csv')\n"
