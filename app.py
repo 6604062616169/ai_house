@@ -50,31 +50,29 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         ฟีเจอร์หลักที่ใช้ในการพยากรณ์ราคาบ้าน :
-        
         - **LotArea** (ขนาดที่ดิน, ตารางฟุต)  
-        
         - **BedroomAbvGr** (จำนวนห้องนอน)  
-
         - **FullBath** (จำนวนห้องน้ำ)  
-
         - **SalePrice** (ราคาขายบ้าน)  
         """
     )
-
     st.subheader("ขั้นตอนการเตรียมข้อมูลใน Google Colab")
     st.write(
         """
-        1️ **อัปโหลด Dataset และแตกไฟล์ ZIP**  
+        **อัปโหลด Dataset**  
         ```
         from google.colab import files
-        uploaded = files.upload()
-        !unzip house.zip  
+        uploaded = files.upload()  
         ```
-        - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง  
+        - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง
+        **แตกไฟล์ ZIP**  
+        ```
+        !unzip house.zip  
+        ```  
         - ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
         """
 
-        "2️ **โหลดข้อมูล**\n"
+        " **โหลดข้อมูล**\n"
         "```python\n"
         "train_data = pd.read_csv('train.csv')\n"
         "test_data = pd.read_csv('test.csv')\n"
