@@ -66,8 +66,8 @@ if st.session_state.page == "Machine Learning":
     )
 
     st.write(
+         "\n รูปปปปปปป 2 \n"
         """
-        "\n รูปปปปปปป 2 \n"
         หลังจากแตกไฟล์ ZIP แล้ว เราจะใช้ `pd.read_csv()` เพื่อโหลดข้อมูลเข้าสู่ Pandas DataFrame  
         โดยมีไฟล์หลักที่ใช้คือ:
         - `train.csv` → ใช้ในการฝึกโมเดล (มีราคาบ้าน)
