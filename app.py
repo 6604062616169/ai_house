@@ -70,8 +70,7 @@ if st.session_state.page == "Machine Learning":
         " **โหลดข้อมูลและการตรวจสอบโครงสร้างของ Dataset**\n"
          "\n รูปปปปปปป 2 \n"
         """
-         หลังจากแตกไฟล์ ZIP แล้ว เราจะใช้ `pd.read_csv()` เพื่อโหลดข้อมูลเข้าสู่ Pandas DataFrame  
-        โดยมีไฟล์หลักที่ใช้คือ:
+        หลังจากแตกไฟล์ ZIP แล้ว เราจะใช้ `pd.read_csv()` เพื่อโหลดข้อมูลเข้าสู่ Pandas DataFrame  
         - `train.csv` → ใช้ในการฝึกโมเดล (มีราคาบ้าน)
         - `test.csv` → ใช้ในการพยากรณ์ราคาบ้าน (ไม่มีราคาบ้าน)
         - `sample_submission.csv` → ตัวอย่างไฟล์ที่ใช้ส่งผลลัพธ์ให้ Kaggle 
@@ -87,24 +86,20 @@ if st.session_state.page == "Machine Learning":
 
 
 
-    
-    st.subheader("การจัดการข้อมูลที่ขาดหาย (Missing Data)")
+
     st.write(
-        """
+        " **การจัดการข้อมูลที่ขาดหาย (Missing Data)**\n"
+         "\n รูปปปปปปป 3 \n"
+       """
         - ใช้ `.isnull().sum()` เพื่อตรวจสอบข้อมูลที่ขาดหาย  
         - แก้ไขข้อมูลที่ขาดหายด้วย:
-        ```python
-        for col in train_data.columns:
-            if train_data[col].isnull().sum() > 0:
-                if train_data[col].dtype == 'object':
-                    train_data[col].fillna("None", inplace=True)
-                else:
-                    train_data[col].fillna(train_data[col].median(), inplace=True)
-        ```
         - เติมค่า `None` ให้กับข้อมูลที่เป็นข้อความ  
         - เติมค่ามัธยฐาน (Median) ให้กับข้อมูลตัวเลข  
         """
     )
+    
+   
+
 
     st.subheader("One-Hot Encoding และการทำให้ Train/Test มีคอลัมน์ตรงกัน")
     st.write(
