@@ -76,7 +76,7 @@ if st.session_state.page == "Machine Learning":
         "```python\n"
         "!unzip house.zip \n"
         "```\n"
-        "ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
+        "ใช้ `!unzip house.zip` เพื่อแตกไฟล์"
 
 
 
