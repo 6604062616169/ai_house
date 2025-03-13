@@ -43,7 +43,7 @@ if st.session_state.page == "Machine Learning":
         **Kaggle House Prices Dataset**
         - ตอนแรกได้เริ่มทำการหาข้อมูลผ่าน ChatGPT และได้คำแนะนำเกี่ยวกับเว็บไซต์ Kaggle ค่ะ
         - อันนี้ข้อมูลเกี่ยวกับราคาบ้านจากเมือง Ames, Iowa, USA ใช้สำหรับสร้างโมเดลพยากรณ์ราคาบ้าน  
-        -  data source: [Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)  
+        - data source: [Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)  
         """
     )
     st.subheader("ฟีเจอร์ที่ใช้ในโมเดล")
@@ -60,20 +60,9 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         **อัปโหลด Datasetและแตกไฟล์ ZIP**\n
-         \n รูปปปปปปป 1 \n
-
-
-
-
-        
-        ฟีเจอร์หลักที่ใช้ในการพยากรณ์ราคาบ้าน :
-        - **LotArea** (ขนาดที่ดิน, ตารางฟุต)  
-        - **BedroomAbvGr** (จำนวนห้องนอน)  
-        - **FullBath** (จำนวนห้องน้ำ)  
-        - **SalePrice** (ราคาขายบ้าน)  
-        
+          รูปปปปปปป 1 
         - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง
-        - ใช้ `!unzip house.zip` เพื่อแตกไฟล์ 
+        - ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
         """
     )
 
