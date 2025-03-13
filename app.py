@@ -85,7 +85,7 @@ if st.session_state.page == "Machine Learning":
 
     st.write(
        """
-       **การจัดการข้อมูลที่ขาดหาย (Missing Data)**
+       **การจัดการข้อมูลที่ขาดหาย (Missing Data)**\n
           รูปปปปปปป 3 
         - ใช้ `.isnull().sum()` เพื่อตรวจสอบข้อมูลที่ขาดหาย  
         - แก้ไขข้อมูลที่ขาดหายด้วย:
@@ -93,10 +93,32 @@ if st.session_state.page == "Machine Learning":
         - เติมค่ามัธยฐาน (Median) ให้กับข้อมูลตัวเลข  
         """
     )
-    
-   
-
-
+    st.write(
+        """
+        **การแปลงข้อมูล Categorical เป็นตัวเลข (One-Hot Encoding)**\n
+        รูป 4
+        เนื่องจาก dataset มีบางคอลัมน์ที่เป็นข้อความ เช่น `Neighborhood` และ `HouseStyle`  
+        เราจึงต้องแปลงข้อมูลเหล่านี้เป็นตัวเลขโดยใช้ **One-Hot Encoding**  
+        
+        **วิธีการทำงานของ One-Hot Encoding:**  
+        - แปลงข้อมูลข้อความเป็นคอลัมน์ใหม่ที่มีค่าเป็น 0 หรือ 1  
+        - ตัวอย่างเดิม:  
+          ```
+          HouseStyle
+          ------------
+          Bungalow
+          Colonial
+          Modern
+          ```
+        - หลังจากแปลง:
+          ```
+          HouseStyle_Bungalow  HouseStyle_Colonial  HouseStyle_Modern
+          -------------------  -------------------  ------------------
+          1                   0                    0
+          0                   1                    0
+          0                   0                    1
+          ```
+        """
     st.subheader("One-Hot Encoding และการทำให้ Train/Test มีคอลัมน์ตรงกัน")
     st.write(
         """
