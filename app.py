@@ -60,16 +60,18 @@ if st.session_state.page == "Machine Learning":
     st.write(
         
         " **อัปโหลด Datasetและแตกไฟล์ ZIP**\n"
-        
+        "รูปปปปปปป 1 \n"
         "- ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง \n"
         "- ใช้ `!unzip house.zip` เพื่อแตกไฟล์\n"
         
-        " \n**โหลดข้อมูล**\n"
-        "```python\n"
-        "train_data = pd.read_csv('train.csv')\n"
-        "test_data = pd.read_csv('test.csv')\n"
-        "```\n"
-        "- โหลดไฟล์ `train.csv` และ `test.csv` เพื่อใช้งาน\n"
+        """
+        หลังจากแตกไฟล์ ZIP แล้ว เราจะใช้ `pd.read_csv()` เพื่อโหลดข้อมูลเข้าสู่ Pandas DataFrame  
+        โดยมีไฟล์หลักที่ใช้คือ:
+        - `train.csv` → ใช้ในการฝึกโมเดล (มีราคาบ้าน)
+        - `test.csv` → ใช้ในการพยากรณ์ราคาบ้าน (ไม่มีราคาบ้าน)
+        - `sample_submission.csv` → ตัวอย่างไฟล์ที่ใช้ส่งผลลัพธ์ให้ Kaggle  
+        """
+    )
         
     )
 
