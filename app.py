@@ -58,7 +58,6 @@ if st.session_state.page == "Machine Learning":
     )
     st.subheader("ขั้นตอนการเตรียมข้อมูลใน Google Colab")
     st.write(
-        """
         " **อัปโหลด Dataset**\n"
         "```python\n"
         "from google.colab import files \n"
