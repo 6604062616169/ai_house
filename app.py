@@ -43,8 +43,7 @@ if st.session_state.page == "Machine Learning":
         **Kaggle House Prices Dataset**\n
         ตอนแรกได้เริ่มทำการหาข้อมูลผ่าน ChatGPT และได้คำแนะนำเกี่ยวกับเว็บไซต์ Kaggle ค่ะ\n
         อันนี้ข้อมูลเกี่ยวกับราคาบ้านจากเมือง Ames, Iowa, USA ใช้สำหรับสร้างโมเดลพยากรณ์ราคาบ้าน  
-        - data source: [Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)  \n
-
+        - data source: [Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)\n
         """
     )
     st.subheader("ฟีเจอร์ที่ใช้ในโมเดล")
@@ -54,7 +53,7 @@ if st.session_state.page == "Machine Learning":
         - **LotArea** (ขนาดที่ดิน, ตารางฟุต)  
         - **BedroomAbvGr** (จำนวนห้องนอน)  
         - **FullBath** (จำนวนห้องน้ำ)  
-        - **SalePrice** (ราคาขายบ้าน)  
+        - **SalePrice** (ราคาขายบ้าน)\n
         """
     )
     st.subheader("ขั้นตอนการเตรียมข้อมูลใน Google Colab")
@@ -63,7 +62,7 @@ if st.session_state.page == "Machine Learning":
         """
         **อัปโหลด Datasetและแตกไฟล์ ZIP**\n
         - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง
-        - ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
+        - ใช้ `!unzip house.zip` เพื่อแตกไฟล์\n 
         """
     )
     st.image("https://img2.pic.in.th/pic/Screenshot-2aa9205adfd6055d3.jpg", width=600, use_container_width=False)
@@ -78,7 +77,7 @@ if st.session_state.page == "Machine Learning":
         หลังจากโหลดข้อมูลแล้ว เราจะตรวจสอบโครงสร้างของ dataset ด้วย `shape` และ `head()`  
         - `train_data.shape` → ดูขนาดของข้อมูล Train  
         - `test_data.shape` → ดูขนาดของข้อมูล Test  
-        - `train_data.head()` → ดูตัวอย่างข้อมูล 5 แถวแรก 
+        - `train_data.head()` → ดูตัวอย่างข้อมูล 5 แถวแรก\n 
         
         """
     )
@@ -89,7 +88,7 @@ if st.session_state.page == "Machine Learning":
         - ใช้ `.isnull().sum()` เพื่อตรวจสอบข้อมูลที่ขาดหาย  
         - แก้ไขข้อมูลที่ขาดหายด้วย:
         - เติมค่า `None` ให้กับข้อมูลที่เป็นข้อความ  
-        - เติมค่ามัธยฐาน (Median) ให้กับข้อมูลตัวเลข
+        - เติมค่ามัธยฐาน (Median) ให้กับข้อมูลตัวเลข\n
         
         """
     )
@@ -98,7 +97,7 @@ if st.session_state.page == "Machine Learning":
         """
         **การแปลงข้อมูล Categorical เป็นตัวเลข (One-Hot Encoding)**\n
         เนื่องจาก dataset มีบางคอลัมน์ที่เป็นข้อความ เช่น `Neighborhood` และ `HouseStyle`  
-        เราจึงต้องแปลงข้อมูลเหล่านี้เป็นตัวเลขโดยใช้ **One-Hot Encoding** ค่ะ
+        เราจึงต้องแปลงข้อมูลเหล่านี้เป็นตัวเลขโดยใช้ **One-Hot Encoding** ค่ะ\n
         
         """
     )
@@ -114,7 +113,7 @@ if st.session_state.page == "Machine Learning":
         **วิธีแยกข้อมูล:**  
         - ลบ `Id` เพราะไม่เกี่ยวกับการพยากรณ์  
         - ลบ `SalePrice` ออกจาก `X`  
-        - `X_test` มีเฉพาะ Features เพราะไม่มี Target
+        - `X_test` มีเฉพาะ Features เพราะไม่มี Target\n
         
         """
     ) 
@@ -123,7 +122,7 @@ if st.session_state.page == "Machine Learning":
           """
           **การแบ่งข้อมูล Train และ Validation** \n
           แบ่งข้อมูลเป็น 80% สำหรับ Train และ 20% สำหรับ Validation  
-          และใช้ `train_test_split()` เพื่อช่วยให้โมเดลเรียนรู้และทดสอบได้แม่นยำขึ้น  
+          และใช้ `train_test_split()` เพื่อช่วยให้โมเดลเรียนรู้และทดสอบได้แม่นยำขึ้น\n  
           
             """
     )  
@@ -132,7 +131,7 @@ if st.session_state.page == "Machine Learning":
         """
         **การ Train และประเมินผลโมเดล** \n
         ใช้ **Random Forest Regressor** ในการ Train โมเดล  
-        และวัดความคลาดเคลื่อนด้วย **Mean Absolute Error (MAE)**  
+        และวัดความคลาดเคลื่อนด้วย **Mean Absolute Error (MAE)**\n  
         
         """
     )
@@ -141,7 +140,7 @@ if st.session_state.page == "Machine Learning":
         """
         **ตรวจสอบคอลัมน์ของ Train และ Test** \n 
         ตรวจสอบว่าคอลัมน์ใน Train และ Test ตรงกันหรือไม่ 
-        - `X_train`และ`X_test` มี 287 คอลัมน์ ซึ่งหมายความว่าข้อมูลทั้งสองชุดตรงกันแล้ว
+        - `X_train`และ`X_test` มี 287 คอลัมน์ ซึ่งหมายความว่าข้อมูลทั้งสองชุดตรงกันแล้ว\n
         
         """
     ) 
@@ -150,7 +149,7 @@ if st.session_state.page == "Machine Learning":
         """
         **ตรวจสอบและลบ `SalePrice` ออกจาก X_test** \n
         เนื่องจาก `X_test` ใช้สำหรับทำนายราคาบ้าน  
-        เพื่อให้แน่ใจว่าไม่มีคอลัมน์ `SalePrice` อยู่ในข้อมูล  
+        เพื่อให้แน่ใจว่าไม่มีคอลัมน์ `SalePrice` อยู่ในข้อมูล\n  
         
         """
      )
@@ -158,7 +157,7 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         **การสร้างไฟล์ Submission และบันทึกโมเดล** \n
-        ใช้โมเดลที่เทรนเสร็จแล้วพยากรณ์ราคาบ้านและบันทึกผลลัพธ์เป็นไฟล์ CSV เพื่อใช้ส่งผลลัพธ์  
+        ใช้โมเดลที่เทรนเสร็จแล้วพยากรณ์ราคาบ้านและบันทึกผลลัพธ์เป็นไฟล์ CSV เพื่อใช้ส่งผลลัพธ์\n  
         
         """
     )
@@ -166,11 +165,11 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         **โหลดโมเดลที่บันทึกไว้ และตรวจสอบไฟล์ Submission** \n
-        - โมเดล `house_price_model.pkl` ที่เทรนไว้สามารถโหลดมาใช้งานได้ทันที  
+        - โมเดล `house_price_model.pkl` ที่เทรนไว้สามารถโหลดมาใช้งานได้ทันที\n  
         โดยไม่ต้องเทรนใหม่  
 
         - ต้องตรวจสอบไฟล์ `submission.csv`  
-        ซึ่งเป็นผลลัพธ์การพยากรณ์ราคาบ้าน สำหรับนำไปใช้งานต่อ  
+        ซึ่งเป็นผลลัพธ์การพยากรณ์ราคาบ้าน สำหรับนำไปใช้งานต่อ\n  
         
         """
 )
@@ -178,7 +177,7 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         **ตรวจสอบจำนวนและชื่อของฟีเจอร์ที่ใช้ในโมเดล** \n
-        ก่อนใช้งานโมเดล เราต้องตรวจสอบว่าจำนวนฟีเจอร์ที่ใช้ตรงกับโมเดลที่บันทึกไว้และดูว่าฟีเจอร์ที่โมเดลใช้มีอะไรบ้าง  
+        ก่อนใช้งานโมเดล เราต้องตรวจสอบว่าจำนวนฟีเจอร์ที่ใช้ตรงกับโมเดลที่บันทึกไว้และดูว่าฟีเจอร์ที่โมเดลใช้มีอะไรบ้าง\n  
         
         """
     )
@@ -186,7 +185,7 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         **ทำนายราคาบ้านด้วยโมเดลที่ฝึกไว้** \n
-        ใส่ค่าพื้นที่จำนวนห้องนอนและห้องน้ำจากนั้นโมเดลจะพยากรณ์ราคาบ้านให้  
+        ใส่ค่าพื้นที่จำนวนห้องนอนและห้องน้ำจากนั้นโมเดลจะพยากรณ์ราคาบ้านให้\n  
         
         """
     )
