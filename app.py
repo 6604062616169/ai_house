@@ -43,7 +43,8 @@ if st.session_state.page == "Machine Learning":
         **Kaggle House Prices Dataset**\n
         ตอนแรกได้เริ่มทำการหาข้อมูลผ่าน ChatGPT และได้คำแนะนำเกี่ยวกับเว็บไซต์ Kaggle ค่ะ\n
         อันนี้ข้อมูลเกี่ยวกับราคาบ้านจากเมือง Ames, Iowa, USA ใช้สำหรับสร้างโมเดลพยากรณ์ราคาบ้าน  
-        - data source: [Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)  
+        - data source: [Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)  \n
+
         """
     )
     st.subheader("ฟีเจอร์ที่ใช้ในโมเดล")
@@ -88,7 +89,8 @@ if st.session_state.page == "Machine Learning":
         - ใช้ `.isnull().sum()` เพื่อตรวจสอบข้อมูลที่ขาดหาย  
         - แก้ไขข้อมูลที่ขาดหายด้วย:
         - เติมค่า `None` ให้กับข้อมูลที่เป็นข้อความ  
-        - เติมค่ามัธยฐาน (Median) ให้กับข้อมูลตัวเลข  
+        - เติมค่ามัธยฐาน (Median) ให้กับข้อมูลตัวเลข
+        
         """
     )
     st.image("https://img2.pic.in.th/pic/Screenshot-4e10b6e8e37cc2879.jpg", width=600, use_container_width=False)
@@ -97,6 +99,7 @@ if st.session_state.page == "Machine Learning":
         **การแปลงข้อมูล Categorical เป็นตัวเลข (One-Hot Encoding)**\n
         เนื่องจาก dataset มีบางคอลัมน์ที่เป็นข้อความ เช่น `Neighborhood` และ `HouseStyle`  
         เราจึงต้องแปลงข้อมูลเหล่านี้เป็นตัวเลขโดยใช้ **One-Hot Encoding** ค่ะ
+        
         """
     )
     st.image("https://img2.pic.in.th/pic/Screenshot-5.jpg", width=600, use_container_width=False)
@@ -112,78 +115,79 @@ if st.session_state.page == "Machine Learning":
         - ลบ `Id` เพราะไม่เกี่ยวกับการพยากรณ์  
         - ลบ `SalePrice` ออกจาก `X`  
         - `X_test` มีเฉพาะ Features เพราะไม่มี Target
+        
         """
     ) 
     st.image("https://img2.pic.in.th/pic/Screenshot-6.jpg", width=600, use_container_width=False)
     st.write(
           """
           **การแบ่งข้อมูล Train และ Validation** \n
-          รูป 6 \n
           แบ่งข้อมูลเป็น 80% สำหรับ Train และ 20% สำหรับ Validation  
           และใช้ `train_test_split()` เพื่อช่วยให้โมเดลเรียนรู้และทดสอบได้แม่นยำขึ้น  
+          
             """
     )  
     st.image("https://img5.pic.in.th/file/secure-sv1/Screenshot-7a9374fee9b8f1a4d.jpg", width=600, use_container_width=False)
     st.write(
         """
         **การ Train และประเมินผลโมเดล** \n
-          รูป 7 \n
         ใช้ **Random Forest Regressor** ในการ Train โมเดล  
         และวัดความคลาดเคลื่อนด้วย **Mean Absolute Error (MAE)**  
+        
         """
     )
     st.image("https://img5.pic.in.th/file/secure-sv1/Screenshot-8.jpg", width=600, use_container_width=False)
     st.write(
         """
-        **ตรวจสอบคอลัมน์ของ Train และ Test** \n
-          รูป 8 \n  
+        **ตรวจสอบคอลัมน์ของ Train และ Test** \n 
         ตรวจสอบว่าคอลัมน์ใน Train และ Test ตรงกันหรือไม่ 
         - `X_train`และ`X_test` มี 287 คอลัมน์ ซึ่งหมายความว่าข้อมูลทั้งสองชุดตรงกันแล้ว
+        
         """
     ) 
     st.image("https://img2.pic.in.th/pic/Screenshot-9d2484ac20106009f.jpg", width=600, use_container_width=False)
     st.write(
         """
         **ตรวจสอบและลบ `SalePrice` ออกจาก X_test** \n
-          รูป 9 \n
         เนื่องจาก `X_test` ใช้สำหรับทำนายราคาบ้าน  
         เพื่อให้แน่ใจว่าไม่มีคอลัมน์ `SalePrice` อยู่ในข้อมูล  
+        
         """
      )
     st.image("https://img5.pic.in.th/file/secure-sv1/Screenshot-10424041db1cb5a396.jpg", width=600, use_container_width=False)
     st.write(
         """
         **การสร้างไฟล์ Submission และบันทึกโมเดล** \n
-          รูป 10 \n
         ใช้โมเดลที่เทรนเสร็จแล้วพยากรณ์ราคาบ้านและบันทึกผลลัพธ์เป็นไฟล์ CSV เพื่อใช้ส่งผลลัพธ์  
+        
         """
     )
     st.image("https://img2.pic.in.th/pic/Screenshot-11399ea42268c8c7e8.jpg", width=600, use_container_width=False)
     st.write(
         """
         **โหลดโมเดลที่บันทึกไว้ และตรวจสอบไฟล์ Submission** \n
-        รูป 11 \n
         - โมเดล `house_price_model.pkl` ที่เทรนไว้สามารถโหลดมาใช้งานได้ทันที  
         โดยไม่ต้องเทรนใหม่  
 
         - ต้องตรวจสอบไฟล์ `submission.csv`  
         ซึ่งเป็นผลลัพธ์การพยากรณ์ราคาบ้าน สำหรับนำไปใช้งานต่อ  
+        
         """
 )
     st.image("https://img5.pic.in.th/file/secure-sv1/Screenshot-12.jpg", width=600, use_container_width=False)
     st.write(
         """
         **ตรวจสอบจำนวนและชื่อของฟีเจอร์ที่ใช้ในโมเดล** \n
-          รูป 12 \n
         ก่อนใช้งานโมเดล เราต้องตรวจสอบว่าจำนวนฟีเจอร์ที่ใช้ตรงกับโมเดลที่บันทึกไว้และดูว่าฟีเจอร์ที่โมเดลใช้มีอะไรบ้าง  
+        
         """
     )
     st.image("https://img2.pic.in.th/pic/Screenshot-132f9286c4ce644a44.jpg", width=600, use_container_width=False)
     st.write(
         """
         **ทำนายราคาบ้านด้วยโมเดลที่ฝึกไว้** \n
-          รูป 13 \n
         ใส่ค่าพื้นที่จำนวนห้องนอนและห้องน้ำจากนั้นโมเดลจะพยากรณ์ราคาบ้านให้  
+        
         """
     )
 
