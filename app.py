@@ -41,8 +41,8 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         **Kaggle House Prices Dataset**
-        - ตอนแรกได้เริ่มทำการหาข้อมูลผ่าน ChatGPT และได้คำแนะนำเกี่ยวกับเว็บไซต์ Kaggle ค่ะ
-        - อันนี้ข้อมูลเกี่ยวกับราคาบ้านจากเมือง Ames, Iowa, USA ใช้สำหรับสร้างโมเดลพยากรณ์ราคาบ้าน  
+        ตอนแรกได้เริ่มทำการหาข้อมูลผ่าน ChatGPT และได้คำแนะนำเกี่ยวกับเว็บไซต์ Kaggle ค่ะ
+        อันนี้ข้อมูลเกี่ยวกับราคาบ้านจากเมือง Ames, Iowa, USA ใช้สำหรับสร้างโมเดลพยากรณ์ราคาบ้าน  
         - data source: [Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)  
         """
     )
