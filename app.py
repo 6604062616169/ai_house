@@ -81,26 +81,25 @@ if st.session_state.page == "Machine Learning":
         
         """
     )
-
+    st.image("https://img2.pic.in.th/pic/Screenshot-3.jpg", width=600, use_container_width=False)
     st.write(
        """
        **การจัดการข้อมูลที่ขาดหาย (Missing Data)**\n
-          รูปปปปปปป 3 
         - ใช้ `.isnull().sum()` เพื่อตรวจสอบข้อมูลที่ขาดหาย  
         - แก้ไขข้อมูลที่ขาดหายด้วย:
         - เติมค่า `None` ให้กับข้อมูลที่เป็นข้อความ  
         - เติมค่ามัธยฐาน (Median) ให้กับข้อมูลตัวเลข  
         """
     )
+    st.image("https://img2.pic.in.th/pic/Screenshot-4e10b6e8e37cc2879.jpg", width=600, use_container_width=False)
     st.write(
         """
         **การแปลงข้อมูล Categorical เป็นตัวเลข (One-Hot Encoding)**\n
-        รูป 4\n
         เนื่องจาก dataset มีบางคอลัมน์ที่เป็นข้อความ เช่น `Neighborhood` และ `HouseStyle`  
         เราจึงต้องแปลงข้อมูลเหล่านี้เป็นตัวเลขโดยใช้ **One-Hot Encoding** ค่ะ
         """
     )
-
+    st.image("https://img2.pic.in.th/pic/Screenshot-5.jpg", width=600, use_container_width=False)
     st.write(
         """
         **การทำให้ Train / Test มีคอลัมน์ตรงกันและการแยก Features (X) กับ Target (y)**\n
@@ -116,6 +115,7 @@ if st.session_state.page == "Machine Learning":
         - `X_test` มีเฉพาะ Features เพราะไม่มี Target
         """
     ) 
+    st.image("https://img2.pic.in.th/pic/Screenshot-3.jpg", width=600, use_container_width=False)
     st.write(
           """
           **การแบ่งข้อมูล Train และ Validation** \n
@@ -124,6 +124,7 @@ if st.session_state.page == "Machine Learning":
           และใช้ `train_test_split()` เพื่อช่วยให้โมเดลเรียนรู้และทดสอบได้แม่นยำขึ้น  
             """
     )  
+    st.image("https://img2.pic.in.th/pic/Screenshot-3.jpg", width=600, use_container_width=False)
     st.write(
         """
         **การ Train และประเมินผลโมเดล** \n
@@ -132,6 +133,7 @@ if st.session_state.page == "Machine Learning":
         และวัดความคลาดเคลื่อนด้วย **Mean Absolute Error (MAE)**  
         """
     )
+    st.image("https://img2.pic.in.th/pic/Screenshot-3.jpg", width=600, use_container_width=False)
     st.write(
         """
         **ตรวจสอบคอลัมน์ของ Train และ Test** \n
@@ -140,6 +142,7 @@ if st.session_state.page == "Machine Learning":
         - `X_train`และ`X_test` มี 287 คอลัมน์ ซึ่งหมายความว่าข้อมูลทั้งสองชุดตรงกันแล้ว
         """
     ) 
+    st.image("https://img2.pic.in.th/pic/Screenshot-3.jpg", width=600, use_container_width=False)
     st.write(
         """
         **ตรวจสอบและลบ `SalePrice` ออกจาก X_test** \n
@@ -148,6 +151,7 @@ if st.session_state.page == "Machine Learning":
         เพื่อให้แน่ใจว่าไม่มีคอลัมน์ `SalePrice` อยู่ในข้อมูล  
         """
      )
+    st.image("https://img2.pic.in.th/pic/Screenshot-3.jpg", width=600, use_container_width=False)
     st.write(
         """
         **การสร้างไฟล์ Submission และบันทึกโมเดล** \n
@@ -155,6 +159,7 @@ if st.session_state.page == "Machine Learning":
         ใช้โมเดลที่เทรนเสร็จแล้วพยากรณ์ราคาบ้านและบันทึกผลลัพธ์เป็นไฟล์ CSV เพื่อใช้ส่งผลลัพธ์  
         """
     )
+    st.image("https://img2.pic.in.th/pic/Screenshot-3.jpg", width=600, use_container_width=False)
     st.write(
         """
         **โหลดโมเดลที่บันทึกไว้ และตรวจสอบไฟล์ Submission** \n
@@ -166,7 +171,7 @@ if st.session_state.page == "Machine Learning":
         ซึ่งเป็นผลลัพธ์การพยากรณ์ราคาบ้าน สำหรับนำไปใช้งานต่อ  
         """
 )
-
+    st.image("https://img2.pic.in.th/pic/Screenshot-3.jpg", width=600, use_container_width=False)
     st.write(
         """
         **ตรวจสอบจำนวนและชื่อของฟีเจอร์ที่ใช้ในโมเดล** \n
@@ -174,6 +179,7 @@ if st.session_state.page == "Machine Learning":
         ก่อนใช้งานโมเดล เราต้องตรวจสอบว่าจำนวนฟีเจอร์ที่ใช้ตรงกับโมเดลที่บันทึกไว้และดูว่าฟีเจอร์ที่โมเดลใช้มีอะไรบ้าง  
         """
     )
+    st.image("https://img2.pic.in.th/pic/Screenshot-3.jpg", width=600, use_container_width=False)
     st.write(
         """
         **ทำนายราคาบ้านด้วยโมเดลที่ฝึกไว้** \n
