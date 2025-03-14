@@ -61,16 +61,14 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         **อัปโหลด Datasetและแตกไฟล์ ZIP**\n
-        รูป 1
         - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง
         - ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
         """
     )
-
+    st.image("https://img2.pic.in.th/pic/Screenshot-2aa9205adfd6055d3.jpg", width=600, use_container_width=False)
     st.write(
         """
         **โหลดข้อมูลและการตรวจสอบโครงสร้างของ Dataset**\n
-          รูปปปปปปป 2 \n
         หลังจากแตกไฟล์ ZIP แล้ว เราจะใช้ `pd.read_csv()` เพื่อโหลดข้อมูลเข้าสู่ Pandas DataFrame  
         - `train.csv` → ใช้ในการฝึกโมเดล (มีราคาบ้าน)
         - `test.csv` → ใช้ในการพยากรณ์ราคาบ้าน (ไม่มีราคาบ้าน)
