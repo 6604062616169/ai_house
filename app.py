@@ -60,7 +60,7 @@ if st.session_state.page == "Machine Learning":
     st.write(
         """
         **อัปโหลด Datasetและแตกไฟล์ ZIP**\n
-          https://img2.pic.in.th/pic/Screenshot-1.jpg
+        st.image("https://img2.pic.in.th/pic/Screenshot-1.jpg", width=600, use_container_width=False)
         - ใช้ `files.upload()` เพื่ออัปโหลดไฟล์ ZIP จากเครื่อง
         - ใช้ `!unzip house.zip` เพื่อแตกไฟล์  
         """
